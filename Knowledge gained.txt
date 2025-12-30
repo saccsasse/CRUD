@@ -1,0 +1,59 @@
+# **Word Document Content (Summary of Knowledge Gained)**
+
+**Title:** FastAPI CRUD Project – Knowledge Summary
+
+**1. FastAPI Fundamentals**  
+- Routing with `APIRouter`  
+- Dependency Injection with `Depends`  
+- Request body parsing with Pydantic models  
+- Response serialization with `response_model`  
+- Error handling via `HTTPException`
+
+**2. SQLAlchemy & Database Management**  
+- SQLAlchemy ORM mapping (models)  
+- Querying, filtering, ordering, committing transactions  
+- SQLModel/SQLAlchemy session management  
+- Alembic migrations for schema changes
+
+**3. Authentication & Security**  
+- JWT authentication (OAuth2 password flow)  
+- Password hashing using `passlib`  
+- Protecting routes with `Depends(get_current_user)`
+
+**4. CRUD Operations**  
+- Creating, reading, updating, deleting records  
+- Using query filters and handling not-found resources  
+- Structuring routers for separation of concerns
+
+**5. Background Tasks & Asynchronous Processing**  
+- Celery + Redis setup for task queue  
+- Scheduling tasks asynchronously  
+- Handling database updates from background tasks  
+- Error handling and logging inside tasks
+
+**6. Email Integration**  
+- SMTP basics for sending emails  
+- MailSlurp for automated testing inbox creation  
+- Logging email sending status in database
+
+**7. Redis Caching**  
+- GET request caching with TTL  
+- Cache invalidation after create/update/delete  
+- Integration with FastAPI endpoints
+
+**8. Project Structure & Best Practices**  
+- Modular project layout  
+- Separation of concerns (routers, tasks, models, schemas)  
+- Lightweight router functions, heavy tasks in background  
+- Logging, structured errors, and maintainable code
+
+**9. Testing & Verification**  
+- Testing API endpoints and background tasks  
+- Using temporary inboxes to verify email sending  
+- Verifying Redis cache works as expected
+
+**10. Key Takeaways**  
+- How to build a full-stack backend with FastAPI  
+- Handling slow I/O operations asynchronously  
+- Combining multiple tools (FastAPI, SQLAlchemy, Redis, Celery, MailSlurp) in one project  
+- Writing maintainable and scalable backend code
