@@ -10,6 +10,6 @@ class EmailRead(EmailCreate):
     id: int
     sent: bool
     timestamp: datetime
-    model_config = {  # Pydantic v2
+    model_config = {
         "from_attributes": True
     }

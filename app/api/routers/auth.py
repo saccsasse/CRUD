@@ -5,10 +5,9 @@ from app.models.user import User as UserModel
 from app.schemas.user import UserCreate, Users, UserLogin
 from app.core import security
 
-#Create a router tagged under "auth"
 router = APIRouter(prefix="/auth", tags=["auth"])
 
-#Register a new user
+
 @router.post("/register", response_model=Users)
 def register(user: UserCreate, db: Session = Depends(get_db)):
     existing_user = db.query(UserModel).filter(UserModel.username == user.username).first()
@@ -25,7 +24,7 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
     db.refresh(db_user)
     return db_user
 
-#Login user & return JWT
+
 @router.post("/login")
 def login(
     username: str = Form(...),

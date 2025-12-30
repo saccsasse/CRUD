@@ -1,9 +1,7 @@
-#Create a dependency for getting the current user
-
-from fastapi import Depends, HTTPException, status #HTTPException and status → used to throw standard HTTP errors
+from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from jose import jwt, JWTError #library for encoding/decoding JSON Web Tokens.
-from sqlalchemy.orm import Session #for accessing the database.
+from jose import jwt, JWTError #library for encoding/decoding JSON Web Tokens
+from sqlalchemy.orm import Session
 
 from app.api.deps.deps import get_db
 from app.models.user import User

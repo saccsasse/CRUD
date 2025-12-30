@@ -1,7 +1,6 @@
 1) FastAPI CRUD Project
 
-This project demonstrates a clean and well-tested backend application using FastAPI, SQLAlchemy ORM, MySQL, Redis, Celery, JWT OAuth2. 
-
+This project demonstrates a clean and well-tested backend application using FastAPI, SQLAlchemy ORM, MySQL, Redis, Celery, JWT OAuth2.
 It includes user authentication, item management, background email sending system, caching and hashing.
 
 
@@ -68,8 +67,6 @@ app/
 │ └─ user.py
 └─ tasks/
 │ └─ email_tasks.py
-├─ test/
-│ └─ test_security.py
 main.py
 
 

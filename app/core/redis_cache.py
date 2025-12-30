@@ -1,11 +1,7 @@
-#Redis is used for caching - for ex when we run for the first time get list of items
-#programm will grab info from database, but when we will run it for the second time
-#thanls to the Redis it will grab directly from cache without calling database again
-
 import redis
 import json
 
-#Connect to local Redis
+
 redis_client = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
 
 def get_cache(key : str):

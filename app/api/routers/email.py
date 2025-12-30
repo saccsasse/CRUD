@@ -11,10 +11,9 @@ router = APIRouter(prefix="/email", tags=["email"])
 @router.post("/send", response_model=EmailRead)
 def send_email(email: EmailCreate, db: Session = Depends(get_db)):
     """
-    Schedule a background email to be sent via Celery.
+    Schedule a background email to be sent via Celery
     """
     try:
-        # Add record to DB as pending
         email_record = Email(
             recipient=email.recipient,
             subject=email.subject,

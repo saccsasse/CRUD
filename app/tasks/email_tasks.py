@@ -14,7 +14,6 @@ def send_email_task(recipient: str, subject: str, body: str, email_id: int):
     """
     db: Session = SessionLocal()
     try:
-        # Load the pending email record
         email_record = db.query(Email).get(email_id)
 
         configuration = Configuration()
@@ -23,7 +22,6 @@ def send_email_task(recipient: str, subject: str, body: str, email_id: int):
         with ApiClient(configuration) as api_client:
             inbox_controller = InboxControllerApi(api_client)
 
-            # Create temporary inbox
             inbox = inbox_controller.create_inbox()
             inbox_id = inbox.id
 

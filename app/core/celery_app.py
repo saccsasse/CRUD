@@ -4,7 +4,7 @@
 from celery import Celery
 
 celery_app = Celery(
-    "worker", #name of Celery app
+    "worker",
     broker="redis://localhost:6379/0",      # Redis broker URL - stores tasks until workers pick them up
     backend="redis://localhost:6379/0",     # Redis result backend - where Celery stores the results of finished tasks
     include=["app.tasks.email_tasks"]
